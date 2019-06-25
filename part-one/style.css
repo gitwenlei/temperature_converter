@@ -1,0 +1,16 @@
+body {
+	font-family: Arial, san-serif;
+}
+
+.starter{
+	font-size:30px;
+	padding:10px;
+	display:block;
+	margin:40px;
+	border:3px solid blue;
+}
+
+#output{
+	font-family: Arial, san-serif;
+	background-color:pink;
+}
