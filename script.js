@@ -14,18 +14,26 @@ var isANumber = function(currentInput) {
     return !/\D/.test(currentInput); //return true or false
 };
 
-var convertToKelvin = function (currentInput) {
-    var temperatureKelvin = (currentInput-32)/1.8;
+// Convert from Fahrenheit to Celsius   oC=(oF-32)/1.8
+var convertToCelsius = function (currentInput) {
+    var temperatureCelsius = (currentInput-32)/1.8;
+    return temperatureCelsius;
 }
+
+// Convert from Fahrenheit to Kelvin   K=((℉-32)/1.8)+273.15
+var convertToKelvin = function (currentInput) {
+    var temperatureKelvin = ((currentInput-32)/1.8)+273.15;
+    return temperatureKelvin;
+}
+
 
 var inputHappened = function(currentInput) {
     var parsedInput = parseInt(currentInput)
 
-    // if it is number
+    // if it is a number
     if (isANumber(parsedInput)) {
-        // display number entered
-        //var output = currentInput;
-        var output = parsedInput + " " + "oC" + " = " + (Math.round((parsedInput-32)/1.8) + " " + "oF";
+        // display temperature in Kelvin
+        var output = "Temperature in Celsius " +  convertToCelsius(parsedInput) + "\n\n" + "Temperature in Kelvin " + convertToKelvin(parsedInput);
     } else {
         var output = "Please enter numbers only."
     }
