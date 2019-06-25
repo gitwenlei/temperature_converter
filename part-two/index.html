@@ -9,30 +9,40 @@
     <input class="starter" id="input" placeholder="input"/>
 
     <!--Dropdown list input-->
-    <form>
-        Select your desired temperature unit:
-      <select id="tempUnit">
+
+    <h3>Select your desired temperature unit:</h3>
+    <p id="result">Temperature Unit</p>
+
+    <select id="temp-unit">
         <option value="fahrenheit">Fahrenheit</option>
         <option value="celsius">Celsius</option>
         <option value="kelvin">Kelvin</option>
     </select>
-</form>
 
+    <h2>Converted Temperature:</h2>
+    <p class="starter" id="output"></p>
 
-<h2>Converted Temperature:</h2>
-<p class="starter" id="output"></p>
+    <script>
+      document.querySelector('#input').addEventListener('change', function(event){
+        var currentInput = event.target.value;
+        inputHappened(currentInput)
+    });
 
-<script>
-  document.querySelector('#input').addEventListener('change', function(event){
-    var currentInput = event.target.value;
-    inputHappened(currentInput)
-});
+  // selected list function
+ var getSelectedValue = function(userChoice) {
+    var dropDownList = document.getElementById("temp-unit");
+    var userChoice = dropDownList.options[dropDownList.selectedIndex].text;
+    console.log(userChoice);
+    //document.getElementById("result").innerHTML = userChoice;
+};
 
-  var display = function( data ){
-    var output = document.querySelector('#output');
-    output.innerText = data;
-}
+    var display = function( data ){
+        var output = document.querySelector('#output');
+        output.innerText = data;
+    }
 </script>
 <script src="script.js"></script>
+<button type="button" onclick="getSelectedValue()"> Get Selected Value </button>
+
 </body>
 </html>
