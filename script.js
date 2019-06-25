@@ -17,13 +17,15 @@ var isANumber = function(currentInput) {
 // Convert from Fahrenheit to Celsius   oC=(oF-32)/1.8
 var convertToCelsius = function (currentInput) {
     var temperatureCelsius = (currentInput-32)/1.8;
-    return temperatureCelsius;
+    var celsiusInt = Math.round(temperatureCelsius);
+    return celsiusInt;
 }
 
 // Convert from Fahrenheit to Kelvin   K=((℉-32)/1.8)+273.15
 var convertToKelvin = function (currentInput) {
     var temperatureKelvin = ((currentInput-32)/1.8)+273.15;
-    return temperatureKelvin;
+    var kelvinInt = Math.round(temperatureKelvin);
+    return kelvinInt;
 }
 
 
