@@ -23,18 +23,23 @@
     <p class="starter" id="output"></p>
 
     <script>
-      document.querySelector('#input').addEventListener('change', function(event){
-        var currentInput = event.target.value;
-        inputHappened(currentInput)
-    });
+    var userChoice;
+
+        document.querySelector('#input').addEventListener('change', function(event){
+            var currentInput = event.target.value;
+            inputHappened(currentInput)
+        });
 
   // selected list function
- var getSelectedValue = function(userChoice) {
+  var getSelectedValue = function(userChoice) {
     var dropDownList = document.getElementById("temp-unit");
-    var userChoice = dropDownList.options[dropDownList.selectedIndex].text;
+    userChoice = dropDownList.options[dropDownList.selectedIndex].value;
+    //return userChoice;
     console.log(userChoice);
-    //document.getElementById("result").innerHTML = userChoice;
-};
+    document.getElementById("result").innerHTML = userChoice;
+    };
+
+    //getSelectedValue(userChoice);
 
     var display = function( data ){
         var output = document.querySelector('#output');
@@ -43,6 +48,5 @@
 </script>
 <script src="script.js"></script>
 <button type="button" onclick="getSelectedValue()"> Get Selected Value </button>
-
 </body>
 </html>
